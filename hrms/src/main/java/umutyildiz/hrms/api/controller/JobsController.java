@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import umutyildiz.hrms.business.abstracts.JobService;
+import umutyildiz.hrms.core.utilities.results.DataResult;
 import umutyildiz.hrms.entities.concretes.Job;
 
 @RestController
@@ -17,7 +18,7 @@ public class JobsController {
 	private JobService jobService;
 	
 	@GetMapping("/getall")
-	public List<Job> getAll(){
+	public DataResult<List<Job>> getAll(){
 		return this.jobService.getAll();
 	}
 }

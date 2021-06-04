@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import umutyildiz.hrms.business.abstracts.JobService;
+import umutyildiz.hrms.core.utilities.results.DataResult;
+import umutyildiz.hrms.core.utilities.results.SuccessDataResult;
 import umutyildiz.hrms.dataAccess.abstracts.JobDao;
 import umutyildiz.hrms.entities.concretes.Job;
 
@@ -15,8 +17,8 @@ public class JobManager implements JobService{
 	private JobDao jobDao;
 	
 	@Override
-	public List<Job> getAll() {
-		return this.jobDao.findAll();
+	public DataResult<List<Job>> getAll() {
+		return new SuccessDataResult<List<Job>>(this.jobDao.findAll(),"Job titles Listelendi");
 	}
 
 }

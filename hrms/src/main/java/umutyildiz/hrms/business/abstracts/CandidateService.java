@@ -2,9 +2,10 @@ package umutyildiz.hrms.business.abstracts;
 
 import java.util.List;
 
+import umutyildiz.hrms.core.utilities.results.Result;
 import umutyildiz.hrms.entities.concretes.Candidate;
 import umutyildiz.hrms.entities.concretes.User;
 
 public interface CandidateService{
-	void add(Candidate candidate);
+	Result add(Candidate candidate);
 }

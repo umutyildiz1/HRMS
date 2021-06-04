@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import umutyildiz.hrms.business.abstracts.CandidateService;
+import umutyildiz.hrms.core.utilities.results.Result;
 import umutyildiz.hrms.entities.concretes.Candidate;
 
 @RestController
@@ -16,7 +17,8 @@ public class CandidatesController {
 	private CandidateService candidateService;
 	
 	@PostMapping("/add")
-	public void add(@RequestBody Candidate candidate) {
-		candidateService.add(candidate);
+	public Result add(@RequestBody Candidate candidate) {
+		return candidateService.add(candidate);
+		
 	}
 }

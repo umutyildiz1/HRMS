@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
 import umutyildiz.hrms.business.abstracts.CandidateService;
+import umutyildiz.hrms.core.utilities.results.Result;
+import umutyildiz.hrms.core.utilities.results.SuccessResult;
 import umutyildiz.hrms.dataAccess.abstracts.CandidateDao;
 import umutyildiz.hrms.entities.concretes.Candidate;
 
@@ -16,8 +20,9 @@ public class CandidateManager implements CandidateService{
 	private CandidateDao candidateDao;
 	
 	@Override
-	public void add(Candidate candidate) {
+	public Result add(Candidate candidate) {
 		candidateDao.save(candidate);
+		return new SuccessResult("Candidate eklendi");
 	}
  
 
