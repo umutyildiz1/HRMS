@@ -18,7 +18,6 @@ public class CandidateManager implements CandidateService{
 	@Override
 	public void add(Candidate candidate) {
 		candidateDao.save(candidate);
-		System.out.println("Ekledim beee");
 	}
  
 
